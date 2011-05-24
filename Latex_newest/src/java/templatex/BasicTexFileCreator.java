@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package dbManagement;
+package templatex;
 
 import java.io.BufferedWriter;
 import java.io.DataInputStream;

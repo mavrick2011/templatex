@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package dbManagement;
+package templatex;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author morthimer
  */
-public class deleteUser_new extends HttpServlet
+public class deleteUser extends HttpServlet
 {
   /**
    * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -37,7 +37,7 @@ public class deleteUser_new extends HttpServlet
   {
     response.setContentType("text/html;charset=UTF-8");
     PrintWriter out = response.getWriter();
-    String print_back_button = "<button type=\"button\" " + "onclick=\"window.location.href='UserDelete.html'\">" + "Return to Form</button>";
+    String print_back_button = "<button type=\"button\" " + "onclick=\"window.location.href='deleteUser.html'\">" + "Return to Form</button>";
     String print_home_button = "<button type=\"button\" " + "onclick=\"window.location.href='start_admin.html'\">" + "Go to Startpage</button>";
     response.setContentType("text/html;charset=UTF-8");
     HTMLHelper.printHeader(out);
@@ -52,7 +52,8 @@ public class deleteUser_new extends HttpServlet
       connection = DBManager.establishConnection();
     } catch (SQLException ex)
     {
-      Logger.getLogger(deleteUser_new.class.getName()).log(Level.SEVERE, null, ex);
+      out.println("<h1>Logger.getLogger(deleteUser.class.getName()).log(Level.SEVERE, null, ex)</h1>");
+        HTMLHelper.printFooter(out);
     }
 
     Statement statement = null;
@@ -61,7 +62,8 @@ public class deleteUser_new extends HttpServlet
       statement = connection.createStatement();
     } catch (SQLException ex)
     {
-      Logger.getLogger(deleteUser_new.class.getName()).log(Level.SEVERE, null, ex);
+        out.println("<h1>Logger.getLogger(deleteUser.class.getName()).log(Level.SEVERE, null, ex)</h1>");
+        HTMLHelper.printFooter(out);
     }
 
 
@@ -78,7 +80,7 @@ public class deleteUser_new extends HttpServlet
         rs = statement.executeQuery("SELECT email FROM users WHERE email = \"" + email + "\";");
       } catch (SQLException ex)
       {
-        Logger.getLogger(deleteUser_new.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(deleteUser.class.getName()).log(Level.SEVERE, null, ex);
       }
 
       try
@@ -89,7 +91,7 @@ public class deleteUser_new extends HttpServlet
         out.println(print_home_button);
       } catch (SQLException ex)
       {
-        Logger.getLogger(deleteUser_new.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(deleteUser.class.getName()).log(Level.SEVERE, null, ex);
       }
 
 
@@ -114,7 +116,7 @@ public class deleteUser_new extends HttpServlet
       processRequest(request, response);
     } catch (ClassNotFoundException ex)
     {
-      Logger.getLogger(deleteUser_new.class.getName()).log(Level.SEVERE, null, ex);
+      Logger.getLogger(deleteUser.class.getName()).log(Level.SEVERE, null, ex);
     }
   }
   @Override
@@ -126,7 +128,7 @@ public class deleteUser_new extends HttpServlet
       processRequest(request, response);
     } catch (ClassNotFoundException ex)
     {
-      Logger.getLogger(deleteUser_new.class.getName()).log(Level.SEVERE, null, ex);
+      Logger.getLogger(deleteUser.class.getName()).log(Level.SEVERE, null, ex);
     }
   }
 }

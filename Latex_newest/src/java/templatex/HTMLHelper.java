@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package dbManagement;
+package templatex;
 
 import java.io.PrintWriter;
 
@@ -93,6 +93,16 @@ public class HTMLHelper
     out.print("<h1>Incorrect Username/Password Combination!</h1><br><br>"
             + "<h1><a href=\"index.html\">Try again!</a></h1>");
   }
+  static void printErrorUsernameTaken(PrintWriter out)
+  {
+    out.print("<h1>The username is already taken!</h1><br><br>"
+            + "<h1><a href=\"addUser.html\">Try again!</a></h1>");
+  }
+  static void printErrorIncompatibelPawwords(PrintWriter out)
+  {
+    out.print("<h1>The two passwords are not the same!</h1><br><br>"
+            + "<h1><a href=\"addUser.html\">Try again!</a></h1>");
+  }
   static void printErrorNoPassword(PrintWriter out)
   {
     out.println("<h1>Please also enter your password!</h1>"
@@ -112,6 +122,14 @@ public class HTMLHelper
     out.print("<h1>No save option selected!</h1><br><br>"
             + "<h1><a href=\"createTemplate.html\">Try again!</a></h1>");
   }
+  static void printNotAllFilledIn(PrintWriter out)
+  {
+    out.println("<h1>Please enter all required Information marked by *!</h1>");
+  }
+  static void printErrorMsg(PrintWriter out, String error_message)
+  {
+    out.println("<h1>" + error_message + "</h1>");
+  }
 
   /*
    * debug only
@@ -119,5 +137,24 @@ public class HTMLHelper
   static void printDebugMsg(PrintWriter out, String debug_msg)
   {
     out.println("<h1>" + debug_msg + "</h1>");
+  }
+  static void printInsertCompleted(PrintWriter out, String password, String username, int userid, String permission, String company, String degree, String name, String surname, String street, String zipcode, String city, String country, String email, String phone, String fax)
+  {
+    out.println("<h1>You've added an user with the following data:</h1>");
+    out.println("<h2>Password:      " + password + "</h2>");
+    out.println("<h2>Username:      " + username + "</h2>");
+    out.println("<h2>UserID:        " + userid + "</h2>");
+    out.println("<h2>Permission:    " + permission + "</h2>");
+    out.println("<h2>Company:       " + company + "</h2>");
+    out.println("<h2>Degree:        " + degree + "</h2>");
+    out.println("<h2>Name:          " + name + "</h2>");
+    out.println("<h2>Surname:       " + surname + "</h2>");
+    out.println("<h2>Street:        " + street + "</h2>");
+    out.println("<h2>Zipcode:       " + zipcode + "</h2>");
+    out.println("<h2>City:          " + city + "</h2>");
+    out.println("<h2>Country:       " + country + "</h2>");
+    out.println("<h2>Email:         " + email + "</h2>");
+    out.println("<h2>Phone:         " + phone + "</h2>");
+    out.println("<h2>Fax:           " + fax + "</h2>");
   }
 }

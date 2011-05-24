@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package dbManagement;
+package templatex;
 
 import org.junit.* ;
 import static org.junit.Assert.* ;
